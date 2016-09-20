@@ -1,0 +1,1 @@
+﻿checkio=lambda D:[n for n in D if D.count(n)>1]

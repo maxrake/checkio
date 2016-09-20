@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>26fc2d90-3260-4b94-b219-9612315c1706</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>bird_language.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>CheckIO</Name>
+    <RootNamespace>CheckIO</RootNamespace>
+    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="bird_language.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="brackets.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="currency_style.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="feed_pigeons.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Friends.py" />
+    <Compile Include="how_to_find_friends.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="min_max.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="moore_neighborhood.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="non_unique_elements.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="numberbase.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pawn_brotherhood.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ppg_helper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="primepalindromegolf.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="restricted_sum.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="roman_numerals.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="soln_for_anything.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="speech_module.py" />
+    <Compile Include="the_flat_dictionary.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="three_points_circle.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="x_o_referee.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.5" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
+  <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
