@@ -16,7 +16,7 @@ from itertools import combinations_with_replacement as cwr
 from math import factorial
 from collections import Counter
 
-
+# second attempt: still slow but completes in reasonable amount of wait time
 def probability(num_dice, sides, target):
     """Compute the probability of rolling a target sum with dice."""
     enums = (x for x in cwr(range(1, sides + 1), num_dice) if sum(x) == target)
@@ -30,6 +30,35 @@ def probability(num_dice, sides, target):
         ways_to_get_target += perms
     
     return round(ways_to_get_target / (sides ** num_dice), 4)
+
+
+## fast solution I found on ckclark's github page:
+## https://github.com/ckclark/CheckiO/blob/master/Incinerator/probably-dice.py
+#def generating(coef, power):
+#    if power == 0:
+#        return [1]
+#    elif power % 2 == 0:
+#        tmp = generating(coef, power / 2)
+#        ans = [0] * (2 * len(tmp) - 1)
+#        for i1, v1 in enumerate(tmp):
+#            for i2, v2 in enumerate(tmp):
+#                ans[i1 + i2] += v1 * v2
+#        return ans
+#    else:
+#        tmp = generating(coef, power - 1)
+#        ans = [0] * (len(tmp) + len(coef) - 1)
+#        for i1, v1 in enumerate(tmp):
+#            for i2, v2 in enumerate(coef):
+#                ans[i1 + i2] += v1 * v2
+#        return ans
+
+#def probability(dice_number, sides, target):
+#    # generating function: https://en.wikipedia.org/wiki/Generating_function
+#    # the answer will be the coefficient of x^target in (x + x^2 + x^3 + ... + x^side) ^ dice_number
+#    try:
+#        return round(float(generating([0] + [1] * sides, dice_number)[target]) / (sides ** dice_number), 4)
+#    except IndexError:
+#        return 0.
 
 
 if __name__ == '__main__':
