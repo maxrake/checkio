@@ -11,12 +11,26 @@
 #        roll_dict[key] += 1
 #    return round(roll_dict.get(target, 0) / sum(roll_dict.values()), 4)
 
-from itertools import permutations, combinations_with_replacement as cwr
+
+from itertools import combinations_with_replacement as cwr
+from math import factorial
+from collections import Counter
+
 
 def probability(num_dice, sides, target):
+    """Compute the probability of rolling a target sum with dice."""
     enums = (x for x in cwr(range(1, sides + 1), num_dice) if sum(x) == target)
-    ways_to_get_target = sum(len(set(permutations(enum))) for enum in enums)
+    ways_to_get_target = 0
+    
+    for enum in enums:
+        perms = factorial(num_dice)
+        ctr = Counter(enum)
+        for count in ctr:
+            perms = perms / factorial(ctr[count])
+        ways_to_get_target += perms
+    
     return round(ways_to_get_target / (sides ** num_dice), 4)
+
 
 if __name__ == '__main__':
     #These are only used for self-checking and are not necessary for auto-testing
